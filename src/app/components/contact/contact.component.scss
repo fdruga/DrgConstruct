@@ -1,0 +1,127 @@
+@use '../../../styles/master' as *;
+
+.contact {
+  padding: 96px 56px;
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+
+  > * { position: relative; }
+
+  @include tablet { padding: 64px 32px; }
+  @include mobile { padding: 48px 18px; }
+}
+
+h3 {
+  font-size: 88px;
+  line-height: .98;
+  letter-spacing: -.025em;
+  font-weight: 600;
+  margin: 24px 0 0;
+  max-width: 1000px;
+  color: var(--paper);
+
+  u {
+    text-decoration: none;
+    border-bottom: 4px solid var(--amber);
+  }
+
+  @include tablet { font-size: 64px; }
+  @include mobile { font-size: 34px; line-height: 1.02; margin-top: 18px; u { border-bottom-width: 3px; } }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  margin-top: 64px;
+  align-items: start;
+
+  @include tablet { grid-template-columns: 1fr 1fr; gap: 32px; }
+  @include mobile { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: #C9CFDA;
+  max-width: 480px;
+
+  @include mobile { font-size: 15px; }
+}
+
+.program {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #9DAAC2;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.phonesheet {
+  border: 1px solid var(--paper);
+  background: rgba(255,255,255,.03);
+
+  @include mobile { margin-top: 24px; }
+}
+
+.phonesheet-head {
+  padding: 10px 20px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  padding: 18px 24px 24px;
+
+  @include mobile { padding: 14px 18px 16px; }
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px dashed rgba(255,255,255,.2);
+
+  &:last-child { border-bottom: none; }
+
+  @include mobile { padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+.lbl {
+  font-size: 11px;
+  letter-spacing: .18em;
+  color: #9DAAC2;
+  text-transform: uppercase;
+}
+
+.phone-num {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--paper);
+  transition: color var(--t-fast);
+
+  &:hover { color: var(--amber); }
+
+  @include mobile { font-size: 24px; }
+}

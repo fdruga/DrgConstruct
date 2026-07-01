@@ -1,0 +1,165 @@
+@use '../../../styles/master' as *;
+
+.sec {
+  padding: 96px 56px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+
+  @include tablet {
+    padding: 64px 32px;
+  }
+  @include mobile {
+    padding: 48px 18px;
+  }
+}
+
+.sec-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+
+  &.sec-label-r {
+    text-align: right;
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+    br {
+      display: none;
+    }
+  }
+}
+
+h2 {
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--ink);
+
+  @include tablet {
+    font-size: 42px;
+  }
+  @include mobile {
+    font-size: 36px;
+    line-height: 1.02;
+  }
+}
+
+.am {
+  color: var(--amber);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+
+  @include tablet {
+    gap: 28px;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.col {
+  border: 1px solid var(--ink);
+  padding: 36px;
+  background: var(--paper);
+
+  @include tablet {
+    padding: 24px;
+  }
+  @include mobile {
+    padding: 22px 20px 24px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-md);
+  color: var(--ink);
+  flex-wrap: wrap;
+
+  @include mobile {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+}
+
+.label-sm {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.16em;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+
+  & + p {
+    margin-top: 14px;
+  }
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+ul {
+  margin-top: 18px;
+  list-style: none;
+
+  @include mobile {
+    margin-top: 16px;
+  }
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--ink-2);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-md);
+  color: var(--ink-2);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  b {
+    font-weight: 600;
+    color: var(--ink);
+    text-align: right;
+  }
+
+  @include mobile {
+    font-size: 12px;
+    padding: 9px 0;
+  }
+}

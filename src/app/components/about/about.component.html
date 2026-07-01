@@ -1,0 +1,43 @@
+<section class="sec" id="despre">
+  <div class="sec-head">
+    <h2>
+      {{ titleMain(loc().despre.title) }}<span class="am">{{ titleLast(loc().despre.title) }}</span>
+    </h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="col">
+      <h3>
+        {{ loc().despre.identitateTitle }}
+        <span class="mono label-sm">{{ loc().despre.identitateLabel }}</span>
+      </h3>
+      <p>{{ loc().despre.identitateP1 }}</p>
+      <p>{{ loc().despre.identitateP2 }}</p>
+      <ul>
+        @for (spec of loc().despre.identitateSpecs; track spec.k) {
+          <li class="mono">
+            <span>{{ spec.k }}</span>
+            <b>{{ spec.v }}</b>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="col">
+      <h3>
+        {{ loc().despre.metodaTitle }}
+        <span class="mono label-sm">{{ loc().despre.metodaLabel }}</span>
+      </h3>
+      <p>{{ loc().despre.metodaP1 }}</p>
+      <p>{{ loc().despre.metodaP2 }}</p>
+      <ul>
+        @for (step of loc().despre.metodaSteps; track step.k) {
+          <li class="mono">
+            <span>{{ step.k }}</span>
+            <b>{{ step.v }}</b>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</section>

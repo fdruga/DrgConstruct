@@ -1,0 +1,241 @@
+@use '../../../styles/master' as *;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 56px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+  gap: var(--sp-lg);
+
+  @include tablet { padding: 16px 32px; }
+  @include mobile { padding: 14px 18px; }
+}
+
+// Left group: brand + desktop nav
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+
+  @include tablet { gap: 32px; }
+}
+
+// Brand
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  height: 96px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+
+  @include tablet { height: 80px; }
+  @include mobile { height: 58px; }
+}
+
+// Desktop nav
+.desktop-nav {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+
+  @include mobile { display: none; }
+}
+
+.nav-link {
+  font-size: 12px;
+  letter-spacing: .06em;
+  color: var(--ink);
+  transition: color var(--t-fast);
+
+  &:hover { color: var(--amber); }
+}
+
+// Right side
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-lg);
+
+  @include mobile { display: none; }
+}
+
+.desktop-phones {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .04em;
+
+  @include tablet { display: none; }
+}
+
+// Language switcher
+.lang-switcher {
+  display: flex;
+  border: 1px solid var(--ink);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--ink);
+  padding: 6px 11px;
+  font-size: 13px;
+  color: var(--ink);
+  cursor: pointer;
+  letter-spacing: .08em;
+  transition: background var(--t-fast), color var(--t-fast);
+
+  &:first-child { border-left: none; }
+
+  &.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  &:not(.active):hover { background: var(--line-soft); }
+}
+
+// Burger
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 100%;
+    height: 1.5px;
+    background: var(--ink);
+  }
+
+  @include mobile { display: flex; }
+}
+
+// Drawer (slides from right)
+.drawer {
+  position: fixed;
+  inset: 0;
+  background: var(--paper);
+  z-index: 60;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  &.open { transform: translateX(0); }
+}
+
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--ink);
+  flex-shrink: 0;
+}
+
+.drawer-close {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.drawer-nav {
+  list-style: none;
+  padding: 24px 18px;
+  flex: 1;
+
+  li {
+    border-bottom: 1px dashed var(--ink-2);
+
+    &:last-child { border-bottom: none; }
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 4px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    transition: color var(--t-fast);
+
+    &:hover { color: var(--amber); }
+  }
+}
+
+.nav-num {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .14em;
+}
+
+.drawer-lang {
+  display: flex;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+
+  .lang-btn {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border-left: 1px solid var(--ink);
+    font-size: var(--fs-sm);
+
+    &:first-child { border-left: none; }
+  }
+}
+
+.drawer-foot {
+  padding: 18px;
+  background: var(--paper-2);
+  border-top: 1px solid var(--ink);
+  flex-shrink: 0;
+
+  a {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 6px 0;
+    color: var(--ink);
+    transition: color var(--t-fast);
+
+    &:hover { color: var(--amber); }
+  }
+}
+
+.drawer-foot-lab {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}

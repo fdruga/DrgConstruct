@@ -1,0 +1,227 @@
+<header class="site-header">
+  <nav class="nav">
+    <div class="nav-left">
+      <!-- Brand -->
+      <a
+        href="#"
+        class="brand"
+        (click)="smoothScroll($event, 'home')"
+        aria-label="DrgConstruct - pagina principală"
+      >
+        <svg
+          class="brand-logo"
+          viewBox="24 14 152 112"
+          fill="none"
+          role="img"
+          aria-label="DrgConstruct"
+        >
+          <path d="M24 38 V22 H40" stroke="#15263B" stroke-width="2" />
+          <path d="M160 22 H176 V38" stroke="#15263B" stroke-width="2" />
+          <path d="M24 102 V118 H40" stroke="#15263B" stroke-width="2" />
+          <path d="M160 118 H176 V102" stroke="#15263B" stroke-width="2" />
+          <text
+            x="100"
+            y="72"
+            text-anchor="middle"
+            font-family="IBM Plex Sans, sans-serif"
+            font-weight="700"
+            font-size="40"
+            fill="#15263B"
+            letter-spacing="-1"
+          >
+            DRG
+          </text>
+          <g stroke="#D9883B" stroke-width="1.6">
+            <line x1="62" y1="84" x2="138" y2="84" />
+            <line x1="62" y1="80" x2="62" y2="88" />
+            <line x1="138" y1="80" x2="138" y2="88" />
+          </g>
+          <text
+            x="100"
+            y="106"
+            text-anchor="middle"
+            font-family="IBM Plex Mono, monospace"
+            font-weight="500"
+            font-size="12.5"
+            fill="#15263B"
+            letter-spacing="5"
+          >
+            CONSTRUCT
+          </text>
+        </svg>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="desktop-nav" role="list">
+        <li>
+          <a href="#schema" class="nav-link mono" (click)="smoothScroll($event, 'schema')">{{
+            loc().header.servicii
+          }}</a>
+        </li>
+        <li>
+          <a href="#servicii" class="nav-link mono" (click)="smoothScroll($event, 'servicii')">{{
+            loc().header.servicii
+          }}</a>
+        </li>
+        <li>
+          <a href="#despre" class="nav-link mono" (click)="smoothScroll($event, 'despre')">{{
+            loc().header.despre
+          }}</a>
+        </li>
+        <li>
+          <a href="#contact" class="nav-link mono" (click)="smoothScroll($event, 'contact')">{{
+            loc().header.contact
+          }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Desktop right: lang + phones -->
+    <div class="nav-right">
+      <div class="lang-switcher" role="group" aria-label="Selectare limbă">
+        <button
+          class="lang-btn mono"
+          [class.active]="currentLang() === 'ro'"
+          (click)="setLanguage('ro')"
+        >
+          RO
+        </button>
+        <button
+          class="lang-btn mono"
+          [class.active]="currentLang() === 'be'"
+          (click)="setLanguage('be')"
+        >
+          BE
+        </button>
+        <button
+          class="lang-btn mono"
+          [class.active]="currentLang() === 'fr'"
+          (click)="setLanguage('fr')"
+        >
+          FR
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile burger -->
+    <button
+      class="menu-btn"
+      (click)="toggleMenu()"
+      aria-label="Meniu"
+      [attr.aria-expanded]="menuOpen()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <aside
+    class="drawer"
+    [class.open]="menuOpen()"
+    id="mobile-drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Meniu navigare"
+  >
+    <div class="drawer-head">
+      <div class="brand">
+        <svg
+          class="brand-logo"
+          viewBox="24 14 152 112"
+          fill="none"
+          role="img"
+          aria-label="DrgConstruct"
+        >
+          <path d="M24 38 V22 H40" stroke="#15263B" stroke-width="2" />
+          <path d="M160 22 H176 V38" stroke="#15263B" stroke-width="2" />
+          <path d="M24 102 V118 H40" stroke="#15263B" stroke-width="2" />
+          <path d="M160 118 H176 V102" stroke="#15263B" stroke-width="2" />
+          <text
+            x="100"
+            y="72"
+            text-anchor="middle"
+            font-family="IBM Plex Sans, sans-serif"
+            font-weight="700"
+            font-size="40"
+            fill="#15263B"
+            letter-spacing="-1"
+          >
+            DRG
+          </text>
+          <g stroke="#D9883B" stroke-width="1.6">
+            <line x1="62" y1="84" x2="138" y2="84" />
+            <line x1="62" y1="80" x2="62" y2="88" />
+            <line x1="138" y1="80" x2="138" y2="88" />
+          </g>
+          <text
+            x="100"
+            y="106"
+            text-anchor="middle"
+            font-family="IBM Plex Mono, monospace"
+            font-weight="500"
+            font-size="12.5"
+            fill="#15263B"
+            letter-spacing="5"
+          >
+            CONSTRUCT
+          </text>
+        </svg>
+      </div>
+      <button class="drawer-close" (click)="closeMenu()" aria-label="Închide">✕</button>
+    </div>
+    <ul class="drawer-nav" role="list">
+      <li>
+        <a href="#schema" (click)="smoothScroll($event, 'schema')"
+          ><span>{{ loc().header.servicii }}</span
+          ><span class="nav-num mono">→ 01</span></a
+        >
+      </li>
+      <li>
+        <a href="#servicii" (click)="smoothScroll($event, 'servicii')"
+          ><span>{{ loc().header.servicii }}</span
+          ><span class="nav-num mono">→ 02</span></a
+        >
+      </li>
+      <li>
+        <a href="#despre" (click)="smoothScroll($event, 'despre')"
+          ><span>{{ loc().header.despre }}</span
+          ><span class="nav-num mono">→ 03</span></a
+        >
+      </li>
+      <li>
+        <a href="#contact" (click)="smoothScroll($event, 'contact')"
+          ><span>{{ loc().header.contact }}</span
+          ><span class="nav-num mono">→ 04</span></a
+        >
+      </li>
+    </ul>
+    <div class="drawer-lang">
+      <button
+        class="lang-btn mono"
+        [class.active]="currentLang() === 'ro'"
+        (click)="setLanguage('ro')"
+      >
+        RO
+      </button>
+      <button
+        class="lang-btn mono"
+        [class.active]="currentLang() === 'be'"
+        (click)="setLanguage('be')"
+      >
+        BE
+      </button>
+      <button
+        class="lang-btn mono"
+        [class.active]="currentLang() === 'fr'"
+        (click)="setLanguage('fr')"
+      >
+        FR
+      </button>
+    </div>
+    <div class="drawer-foot">
+      <div class="drawer-foot-lab mono">Numere de telefon</div>
+      <a href="tel:+40774687957" class="mono">0774 68 79 57</a>
+      <a href="tel:+40773951400" class="mono">0773 95 14 00</a>
+    </div>
+  </aside>
+</header>

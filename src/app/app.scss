@@ -1,0 +1,21 @@
+﻿:host {
+  display: block;
+}
+
+.page-frame {
+  max-width: var(--container-desktop);
+  margin: 0 auto;
+  border-left: 1px solid var(--ink);
+  border-right: 1px solid var(--ink);
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (max-width: 768px) {
+  .page-frame {
+    background-size: 30px 30px;
+  }
+}

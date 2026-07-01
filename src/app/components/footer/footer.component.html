@@ -1,0 +1,47 @@
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="brand">
+        <svg class="brand-logo" viewBox="0 14 200 112" fill="none" role="img" aria-label="DrgConstruct">
+          <path d="M24 38 V22 H40" stroke="#15263B" stroke-width="2"/>
+          <path d="M160 22 H176 V38" stroke="#15263B" stroke-width="2"/>
+          <path d="M24 102 V118 H40" stroke="#15263B" stroke-width="2"/>
+          <path d="M160 118 H176 V102" stroke="#15263B" stroke-width="2"/>
+          <text x="100" y="72" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-weight="700" font-size="40" fill="#15263B" letter-spacing="-1">DRG</text>
+          <g stroke="#D9883B" stroke-width="1.6">
+            <line x1="62" y1="84" x2="138" y2="84"/>
+            <line x1="62" y1="80" x2="62" y2="88"/>
+            <line x1="138" y1="80" x2="138" y2="88"/>
+          </g>
+          <text x="100" y="106" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-weight="500" font-size="12.5" fill="#15263B" letter-spacing="5">CONSTRUCT</text>
+        </svg>
+      </div>
+      <p class="footer-desc">{{ loc().footer.desc }}</p>
+    </div>
+
+    <div class="footer-col footer-col-catalog">
+      <h5 class="mono">{{ loc().footer.catalogTitle }}</h5>
+      <ul class="catalog-list">
+        @for (item of loc().footer.catalogItems; track item) {
+          <li><a href="#servicii" (click)="smoothScroll($event, 'servicii')">{{ item }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5 class="mono">{{ loc().footer.meniuTitle }}</h5>
+      <ul>
+        @for (section of menuSections; track section.key) {
+          <li><a [href]="'#' + section.key" (click)="smoothScroll($event, section.key)">{{ section.label() }}</a></li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <!--
+  <div class="copyline mono">
+    <span>© {{ year }} DRGCONSTRUCT SRL · DOC. DRG-WEB-01</span>
+    <span>v1 · BLUEPRINT TEHNIC</span>
+  </div>
+  -->
+</footer>

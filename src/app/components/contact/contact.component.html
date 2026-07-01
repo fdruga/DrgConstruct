@@ -1,0 +1,30 @@
+<section class="contact" id="contact">
+  <h3>{{ loc().contact.title.split('.')[0] }}. <u>{{ loc().contact.title.split('. ')[1] }}</u></h3>
+
+  <div class="contact-grid">
+    <div class="contact-left">
+      <p>{{ loc().contact.paragraph }}</p>
+      <p class="program mono">{{ loc().contact.program }}</p>
+    </div>
+
+    <div class="phonesheet">
+      <div class="phonesheet-head mono">
+        <span>Numere de telefon</span>
+      </div>
+      <ul>
+        <li>
+          <span class="lbl mono">{{ loc().contact.line1Label }}</span>
+          <a [href]="phones[0].href" class="phone-num">{{ phones[0].display }}</a>
+        </li>
+        <li>
+          <span class="lbl mono">{{ loc().contact.line2Label }}</span>
+          <a [href]="phones[1].href" class="phone-num">{{ phones[1].display }}</a>
+        </li>
+        <li>
+          <span class="lbl mono">{{ loc().contact.line3Label }}</span>
+          <a [href]="phones[2].href" class="phone-num">{{ phones[2].display }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

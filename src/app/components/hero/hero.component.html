@@ -1,0 +1,54 @@
+<!-- Bandă telefoane — doar mobil, apare între nav și hero -->
+<div class="phone-strip">
+  <a href="tel:+40774687957">
+    <span class="lbl mono">Linia 1 · RO</span>
+    <span class="num mono">0774 68 79 57</span>
+  </a>
+  <a href="tel:+40773951400">
+    <span class="lbl mono">Linia 2 · RO</span>
+    <span class="num mono">0773 95 14 00</span>
+  </a>
+</div>
+
+<section class="hero" id="home">
+  <h1>
+    {{ loc().hero.titlePre }}<u>{{ loc().hero.titleUnderline }}</u
+    >{{ loc().hero.titleMid }}<span class="marker">{{ loc().hero.titleMarker }}</span
+    >.
+  </h1>
+
+  <div class="hero-info">
+    <div class="hero-left">
+      <p class="hero-paragraph">{{ loc().hero.paragraph }}</p>
+      <div class="ctas">
+        <a href="#contact" class="btn fill" (click)="smoothScroll($event, 'contact')">
+          {{ loc().hero.ctaOferta }}<span class="arr" aria-hidden="true"></span>
+        </a>
+        <a href="#servicii" class="btn" (click)="smoothScroll($event, 'servicii')">{{
+          loc().hero.ctaServicii
+        }}</a>
+      </div>
+    </div>
+
+    <div class="specsheet">
+      <ul>
+        <li class="mono">
+          <span>{{ loc().hero.specTipLabel }}</span>
+          <b>{{ loc().hero.specTipVal }}</b>
+        </li>
+        <li class="mono">
+          <span>{{ loc().hero.specAcoperireLabel }}</span>
+          <b>{{ loc().hero.specAcoperireVal }}</b>
+        </li>
+        <li class="mono">
+          <span>{{ loc().hero.specGarantieLabel }}</span>
+          <b>{{ loc().hero.specGarantieVal }}</b>
+        </li>
+        <li class="mono">
+          <span>{{ loc().hero.specPretLabel }}</span>
+          <b>{{ loc().hero.specPretVal }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

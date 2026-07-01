@@ -1,0 +1,20 @@
+<section class="sec" id="servicii">
+  <div class="sec-head">
+    <h2>
+      {{ titleMain(loc().servicii.title)
+      }}<span class="am">{{ titleLast(loc().servicii.title) }}</span>
+    </h2>
+  </div>
+
+  <div class="svc-grid">
+    @for (item of loc().servicii.items; track item.title; let i = $index) {
+      <div class="svc">
+        <div class="body">
+          <div class="icon" [innerHTML]="icons[i]"></div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.desc }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>

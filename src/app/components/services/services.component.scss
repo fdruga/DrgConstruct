@@ -1,0 +1,165 @@
+@use '../../../styles/master' as *;
+
+.sec {
+  padding: 96px 56px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper-2);
+
+  @include tablet {
+    padding: 64px 32px;
+  }
+  @include mobile {
+    padding: 48px 18px;
+  }
+}
+
+.sec-head {
+  display: grid;
+  align-items: end;
+  margin-bottom: 60px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--ink);
+
+  @include tablet {
+    grid-template-columns: 140px 1fr;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+    margin-bottom: 28px;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.sec-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.6;
+
+  &.sec-label-r {
+    text-align: right;
+    @include tablet {
+      display: none;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+    br {
+      display: none;
+    }
+  }
+}
+
+h2 {
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  color: var(--ink);
+
+  @include tablet {
+    font-size: 42px;
+  }
+  @include mobile {
+    font-size: 36px;
+    line-height: 1.02;
+  }
+}
+
+.am {
+  color: var(--amber);
+}
+
+// Grid
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    border-left: 1px solid var(--ink);
+    border-right: 1px solid var(--ink);
+  }
+}
+
+.svc {
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  transition: background var(--t-base);
+
+  &:hover {
+    background: var(--paper-2);
+  }
+}
+
+.body {
+  padding: 24px 22px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    padding: 20px 18px 22px;
+  }
+}
+
+.icon {
+  width: 68px;
+  height: 68px;
+  border: 1px solid var(--ink-2);
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  background: var(--paper-2);
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  @include mobile {
+    width: 48px;
+    height: 48px;
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+h3 {
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+p {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin-top: 12px;
+  flex: 1;
+}

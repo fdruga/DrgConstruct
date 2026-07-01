@@ -1,0 +1,77 @@
+<section class="gallery-section sec" id="lucrari">
+  <div class="sec-head">
+    <h2>
+      {{ titleMain(loc().galerie.title)
+      }}<span class="amber">{{ titleLast(loc().galerie.title) }}</span>
+    </h2>
+  </div>
+
+  <!-- Desktop masonry -->
+  <div class="masonry-wrap desktop-only">
+    <div class="masonry-cols">
+      @for (img of images.slice(0, 6); track img.src; let i = $index) {
+        <figure
+          class="work"
+          (click)="openLightbox(i)"
+          role="button"
+          tabindex="0"
+          (keydown.enter)="openLightbox(i)"
+          (keydown.space)="openLightbox(i)"
+        >
+          <img [src]="img.src" [alt]="getAlt(i)" loading="lazy" />
+        </figure>
+      }
+    </div>
+    <!-- Wide image -->
+    <figure
+      class="work work-wide"
+      (click)="openLightbox(6)"
+      role="button"
+      tabindex="0"
+      (keydown.enter)="openLightbox(6)"
+      (keydown.space)="openLightbox(6)"
+    >
+      <img [src]="images[6].src" [alt]="getAlt(6)" loading="lazy" />
+    </figure>
+  </div>
+
+  <!-- Mobile single column -->
+  <div class="mobile-gallery mobile-only">
+    @for (img of images; track img.src; let i = $index) {
+      <figure
+        class="work"
+        (click)="openLightbox(i)"
+        role="button"
+        tabindex="0"
+        (keydown.enter)="openLightbox(i)"
+        (keydown.space)="openLightbox(i)"
+      >
+        <img [src]="img.src" [alt]="getAlt(i)" loading="lazy" />
+      </figure>
+    }
+  </div>
+
+  <!-- Lightbox -->
+  @if (lightboxOpen()) {
+    <div
+      class="lightbox-overlay"
+      (click)="onOverlayClick($event)"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Vizualizare imagine"
+    >
+      <button class="lb-close" (click)="closeLightbox()" aria-label="Închide">&#10005;</button>
+      <div class="lb-content">
+        <div class="lb-img-wrap">
+          <button class="lb-nav lb-prev" (click)="prev()" aria-label="Imaginea anterioară">
+            &#8249;
+          </button>
+          <img [src]="images[lightboxIndex()].src" [alt]="getAlt(lightboxIndex())" class="lb-img" />
+          <button class="lb-nav lb-next" (click)="next()" aria-label="Imaginea următoare">
+            &#8250;
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</section>
