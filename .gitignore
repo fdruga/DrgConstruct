@@ -42,6 +42,9 @@ testem.log
 /typings
 __screenshots__/
 
+# Environment variables (FTP deploy credentials)
+.env
+
 # System files
 .DS_Store
 Thumbs.db

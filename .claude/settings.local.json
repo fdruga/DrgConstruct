@@ -3,7 +3,12 @@
     "allow": [
       "PowerShell(New-Item -ItemType Directory -Force -Path \"d:\\\\Projects\\\\DrgConstruct\\\\src\\\\app\\\\components\\\\diagram\")",
       "Bash(npx ng *)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npm install *)",
+      "Bash(mkdir -p \"d:\\\\Projects\\\\DrgConstruct\\\\scripts\")"
+    ],
+    "additionalDirectories": [
+      "d:\\Projects\\DrgConstruct"
     ]
   }
 }
