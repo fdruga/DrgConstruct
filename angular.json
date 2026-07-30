@@ -34,9 +34,7 @@
                 "output": "assets"
               }
             ],
-            "styles": [
-              "src/styles/master.scss"
-            ]
+            "styles": ["src/styles/master.scss"]
           },
           "configurations": {
             "production": {
@@ -76,6 +74,9 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

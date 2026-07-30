@@ -12,26 +12,30 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
-    border-right: 1px solid rgba(255,255,255,.15);
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
 
-    &:last-child { border-right: none; }
+    &:last-child {
+      border-right: none;
+    }
   }
 
   .lbl {
     font-size: 9.5px;
-    letter-spacing: .18em;
-    color: #9DAAC2;
+    letter-spacing: 0.18em;
+    color: #9daac2;
     text-transform: uppercase;
   }
 
   .num {
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: .02em;
+    letter-spacing: 0.02em;
     color: var(--paper);
   }
 
-  @include mobile { display: grid; }
+  @include mobile {
+    display: grid;
+  }
 }
 
 .hero {
@@ -43,7 +47,9 @@
     linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
   background-size: 48px 48px;
 
-  @include tablet { padding: 48px 32px 48px; }
+  @include tablet {
+    padding: 48px 32px 48px;
+  }
   @include mobile {
     padding: 28px 18px 36px;
     background-size: 30px 30px;
@@ -57,7 +63,7 @@
   padding: 6px 12px;
   border: 1px solid var(--ink);
   font-size: 11px;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   background: var(--paper);
   color: var(--ink);
@@ -76,26 +82,38 @@
   border-radius: 50%;
   flex-shrink: 0;
 
-  @include mobile { width: 7px; height: 7px; }
+  @include mobile {
+    width: 7px;
+    height: 7px;
+  }
 }
 
 h1 {
   font-size: 96px;
-  line-height: .98;
-  letter-spacing: -.028em;
+  line-height: 0.98;
+  letter-spacing: -0.028em;
   font-weight: 600;
-  margin-top: 30px;
   max-width: 1100px;
   color: var(--ink);
 
-  @include tablet { font-size: 72px; }
-  @include mobile { font-size: 42px; line-height: 1.02; margin-top: 18px; }
-  @include mobile-sm { font-size: 34px; }
+  @include tablet {
+    font-size: 72px;
+  }
+  @include mobile {
+    font-size: 42px;
+    line-height: 1.02;
+    margin-top: 18px;
+  }
+  @include mobile-sm {
+    font-size: 34px;
+  }
 
   u {
     text-decoration: none;
     border-bottom: 3px solid var(--amber);
-    @include mobile { border-bottom-width: 2.5px; }
+    @include mobile {
+      border-bottom-width: 2.5px;
+    }
   }
 
   .marker {
@@ -109,10 +127,12 @@ h1 {
       inset: 8% -4px;
       background: var(--amber);
       z-index: -1;
-      opacity: .4;
+      opacity: 0.4;
     }
 
-    @include mobile { padding: 0 4px; }
+    @include mobile {
+      padding: 0 4px;
+    }
   }
 }
 
@@ -124,7 +144,9 @@ h1 {
   padding-top: 40px;
   border-top: 1px dashed var(--ink-2);
 
-  @include tablet { gap: 40px; }
+  @include tablet {
+    gap: 40px;
+  }
   @include mobile {
     grid-template-columns: 1fr;
     gap: var(--sp-lg);
@@ -134,7 +156,11 @@ h1 {
   }
 }
 
-.hero-left { display: flex; flex-direction: column; gap: 0; }
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
 
 .hero-paragraph {
   font-size: 17px;
@@ -142,7 +168,9 @@ h1 {
   max-width: 540px;
   color: var(--ink-2);
 
-  @include mobile { font-size: 15px; }
+  @include mobile {
+    font-size: 15px;
+  }
 }
 
 .ctas {
@@ -166,19 +194,26 @@ h1 {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 13px;
-  letter-spacing: .06em;
+  letter-spacing: 0.06em;
   border: 1px solid var(--ink);
   background: var(--paper);
   color: var(--ink);
-  transition: .2s;
+  transition: 0.2s;
   white-space: nowrap;
 
-  &:hover { background: var(--ink); color: var(--paper); }
+  &:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
 
   &.fill {
     background: var(--ink);
     color: var(--paper);
-    &:hover { background: var(--amber); border-color: var(--amber); color: var(--ink); }
+    &:hover {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--ink);
+    }
   }
 
   @include mobile {
@@ -209,12 +244,40 @@ h1 {
   }
 }
 
+.btn-wa {
+  background: #25d366;
+  border-color: #25d366;
+  color: #fff;
+  &:hover {
+    background: #128c7e;
+    border-color: #128c7e;
+    color: #fff;
+  }
+
+  .wa-text-m {
+    display: none;
+  }
+
+  @include mobile {
+    .wa-icon-d {
+      display: none;
+    }
+    .wa-text-m {
+      display: inline;
+    }
+  }
+}
+
 // Specsheet
 .specsheet {
   border: 1px solid var(--ink);
   background: var(--paper);
+  align-self: start;
 
-  ul { list-style: none; padding: 14px 18px 16px; }
+  ul {
+    list-style: none;
+    padding: 14px 18px 16px;
+  }
 
   li {
     display: flex;
@@ -225,14 +288,26 @@ h1 {
     font-size: 13px;
     gap: var(--sp-md);
 
-    &:last-child { border-bottom: none; }
+    &:last-child {
+      border-bottom: none;
+    }
 
-    span { color: var(--ink-2); }
-    b { font-weight: 600; text-align: right; }
+    span {
+      color: var(--ink-2);
+    }
+    b {
+      font-weight: 600;
+      text-align: right;
+    }
   }
 
   @include mobile {
-    ul { padding: 10px 14px 12px; }
-    li { font-size: 12px; padding: 10px 0; }
+    ul {
+      padding: 10px 14px 12px;
+    }
+    li {
+      font-size: 12px;
+      padding: 10px 0;
+    }
   }
 }

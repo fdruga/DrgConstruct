@@ -21,6 +21,10 @@ export class LocalizationService {
   }
 
   private detectLanguage(): Language {
+    // TODO: re-enable before multi-language launch (localization effort)
+    const forceLang: Language | null = 'ro';
+    if (forceLang) return forceLang;
+
     const cookieLang = this.getCookieSafe('preferred_lang');
     if (cookieLang && (cookieLang === 'ro' || cookieLang === 'fr' || cookieLang === 'be')) {
       return cookieLang as Language;

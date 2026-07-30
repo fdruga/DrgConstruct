@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "PowerShell(New-Item -ItemType Directory -Force -Path \"d:\\\\Projects\\\\DrgConstruct\\\\src\\\\app\\\\components\\\\diagram\")",
-      "Bash(npx ng *)"
+      "Bash(npx ng *)",
+      "WebSearch"
     ]
   }
 }

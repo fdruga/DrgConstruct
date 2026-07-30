@@ -15,8 +15,12 @@
   border-bottom: 1px solid var(--ink);
   gap: var(--sp-lg);
 
-  @include tablet { padding: 16px 32px; }
-  @include mobile { padding: 14px 18px; }
+  @include tablet {
+    padding: 16px 32px;
+  }
+  @include mobile {
+    padding: 14px 18px;
+  }
 }
 
 // Left group: brand + desktop nav
@@ -25,7 +29,9 @@
   align-items: center;
   gap: 56px;
 
-  @include tablet { gap: 32px; }
+  @include tablet {
+    gap: 32px;
+  }
 }
 
 // Brand
@@ -41,8 +47,12 @@
   display: block;
   flex-shrink: 0;
 
-  @include tablet { height: 80px; }
-  @include mobile { height: 58px; }
+  @include tablet {
+    height: 80px;
+  }
+  @include mobile {
+    height: 58px;
+  }
 }
 
 // Desktop nav
@@ -51,16 +61,20 @@
   gap: 36px;
   list-style: none;
 
-  @include mobile { display: none; }
+  @include mobile {
+    display: none;
+  }
 }
 
 .nav-link {
-  font-size: 12px;
-  letter-spacing: .06em;
+  font-size: 20px;
+  letter-spacing: 0.06em;
   color: var(--ink);
   transition: color var(--t-fast);
 
-  &:hover { color: var(--amber); }
+  &:hover {
+    color: var(--amber);
+  }
 }
 
 // Right side
@@ -69,15 +83,19 @@
   align-items: center;
   gap: var(--sp-lg);
 
-  @include mobile { display: none; }
+  @include mobile {
+    display: none;
+  }
 }
 
 .desktop-phones {
   font-size: 12px;
   color: var(--muted);
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 
-  @include tablet { display: none; }
+  @include tablet {
+    display: none;
+  }
 }
 
 // Language switcher
@@ -94,17 +112,23 @@
   font-size: 13px;
   color: var(--ink);
   cursor: pointer;
-  letter-spacing: .08em;
-  transition: background var(--t-fast), color var(--t-fast);
+  letter-spacing: 0.08em;
+  transition:
+    background var(--t-fast),
+    color var(--t-fast);
 
-  &:first-child { border-left: none; }
+  &:first-child {
+    border-left: none;
+  }
 
   &.active {
     background: var(--ink);
     color: var(--paper);
   }
 
-  &:not(.active):hover { background: var(--line-soft); }
+  &:not(.active):hover {
+    background: var(--line-soft);
+  }
 }
 
 // Burger
@@ -128,7 +152,9 @@
     background: var(--ink);
   }
 
-  @include mobile { display: flex; }
+  @include mobile {
+    display: flex;
+  }
 }
 
 // Drawer (slides from right)
@@ -138,12 +164,14 @@
   background: var(--paper);
   z-index: 60;
   transform: translateX(100%);
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 
-  &.open { transform: translateX(0); }
+  &.open {
+    transform: translateX(0);
+  }
 }
 
 .drawer-head {
@@ -175,7 +203,9 @@
   li {
     border-bottom: 1px dashed var(--ink-2);
 
-    &:last-child { border-bottom: none; }
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   a {
@@ -188,14 +218,16 @@
     color: var(--ink);
     transition: color var(--t-fast);
 
-    &:hover { color: var(--amber); }
+    &:hover {
+      color: var(--amber);
+    }
   }
 }
 
 .nav-num {
   font-size: 11px;
   color: var(--muted);
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
 }
 
 .drawer-lang {
@@ -210,7 +242,9 @@
     border-left: 1px solid var(--ink);
     font-size: var(--fs-sm);
 
-    &:first-child { border-left: none; }
+    &:first-child {
+      border-left: none;
+    }
   }
 }
 
@@ -228,14 +262,16 @@
     color: var(--ink);
     transition: color var(--t-fast);
 
-    &:hover { color: var(--amber); }
+    &:hover {
+      color: var(--amber);
+    }
   }
 }
 
 .drawer-foot-lab {
   font-size: 11px;
   color: var(--muted);
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
